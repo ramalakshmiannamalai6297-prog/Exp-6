@@ -12,23 +12,18 @@ pipeline {
         }
  
         stage('Build') {
-    steps {
-        echo 'Building project'
-        dir('Ramalakshmi/jenkins') {
-            bat 'mvn clean compile'
+            steps {
+                echo 'Building project'
+                bat 'mvn -f Ramalakshmi/pom.xml'
+            }
         }
-    }
-}
  
         stage('Run Selenium Tests') {
-    steps {
-        echo 'Running Selenium Tests'
-        dir('Ramalakshmi/jenkins') {
-            bat 'mvn test'
+            steps {
+                echo 'Running Selenium Tests'
+                bat 'mvn -f Ramalakshmi/pom.xml'
+            }
         }
-    }
-}
- 
  
     }
  
