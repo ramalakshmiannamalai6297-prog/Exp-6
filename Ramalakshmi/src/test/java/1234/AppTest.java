@@ -1,4 +1,3 @@
-package 1234;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
